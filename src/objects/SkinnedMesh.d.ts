@@ -1,6 +1,5 @@
 import { BindMode } from "../constants.js";
 import { BufferGeometry } from "../core/BufferGeometry.js";
-import { Object3DEventMap } from "../core/Object3D.js";
 import { Material } from "../materials/Material.js";
 import { Box3 } from "../math/Box3.js";
 import { Matrix4 } from "../math/Matrix4.js";
@@ -51,7 +50,7 @@ import { Skeleton } from "./Skeleton.js";
 export class SkinnedMesh<
     TGeometry extends BufferGeometry = BufferGeometry,
     TMaterial extends Material | Material[] = Material | Material[],
-    TEventMap extends Object3DEventMap = Object3DEventMap,
+    TEventMap,
 > extends Mesh<TGeometry, TMaterial, TEventMap> {
     /**
      * Create a new instance of {@link SkinnedMesh}
