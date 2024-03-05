@@ -8,6 +8,7 @@ import { Sphere } from "../math/Sphere.js";
 import { Vector3 } from "../math/Vector3.js";
 import { Mesh, MeshJSON, MeshJSONObject } from "./Mesh.js";
 import { Skeleton } from "./Skeleton.js";
+import {Object3DEventMap} from "../core/Object3D";
 
 export interface SkinnedMeshJSONObject extends MeshJSONObject {
     bindMode: BindMode;
