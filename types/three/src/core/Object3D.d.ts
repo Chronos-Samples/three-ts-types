@@ -130,7 +130,7 @@ export class Object3D<TEventMap extends Object3DEventMap = Object3DEventMap> ext
      * Sub-classes will update this value.
      * @defaultValue `Object3D`
      */
-    readonly type: string;
+    readonly type: string | "Object3D";
 
     /**
      * Object's parent in the {@link https://en.wikipedia.org/wiki/Scene_graph | scene graph}.
@@ -140,11 +140,16 @@ export class Object3D<TEventMap extends Object3DEventMap = Object3DEventMap> ext
     parent: Object3D | null;
 
     /**
+     * Scene object attached to.
+     * @default null
+     */
+    scene: Object3D | null;
+
+    /**
      * Array with object's children.
      * @see {@link THREE.Object3DGroup | Group} for info on manually grouping objects.
      * @defaultValue `[]`
      */
-
     children: Object3D[];
 
     /**
@@ -232,7 +237,25 @@ export class Object3D<TEventMap extends Object3DEventMap = Object3DEventMap> ext
      * Object gets rendered if `true`.
      * @defaultValue `true`
      */
-    visible: boolean;
+    visibilityMap: Map<string, boolean>;
+
+    /**
+     * Set if object should be rendered (default visibility layer).
+     */
+    set visible(value: boolean);
+
+    /**
+     * Get if object should be rendered.
+     * @default true
+     */
+    get visible(): boolean;
+
+    /**
+     * Set if object should be rendered (specific visibility layer).
+     * @param key - visibility layer
+     * @param value - is visible
+     */
+    setVisibility(key: string, value: boolean): void;
 
     /**
      * Whether the object gets rendered into shadow map.

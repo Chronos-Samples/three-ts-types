@@ -8,9 +8,26 @@ export interface BaseEvent<TEventType extends string = string> {
 /**
  * The minimal expected contract of a fired Event that was dispatched by a {@link EventDispatcher<>}.
  */
-export interface Event<TEventType extends string = string, TTarget = unknown> {
-    readonly type: TEventType;
-    readonly target: TTarget;
+export class Event<TEventType extends string = string, TTarget = unknown> {
+    /**
+     * Creates event object.
+     **/
+    constructor(eventData: { type: TEventType } & { [prop: string]: any }, options?: EventOptions);
+
+    type: TEventType;
+    target?: TTarget;
+    private path: Array<EventDispatcher> | null;
+    [attachment: string]: any;
+    stopQueue: () => void;
+    stopBubbling: () => void;
+}
+
+export interface EventOptions {
+    bubbles?: boolean;
+}
+
+export interface EventListenerOptions {
+    priority?: number;
 }
 
 export type EventListener<TEventData, TEventType extends string, TTarget> = (
@@ -19,24 +36,8 @@ export type EventListener<TEventData, TEventType extends string, TTarget> = (
 
 /**
  * JavaScript events for custom objects
- * @example
- * ```typescript
- * // Adding events to a custom object
- * class Car extends EventDispatcher {
- *   start() {
- *     this.dispatchEvent( { type: 'start', message: 'vroom vroom!' } );
- *   }
- * };
- * // Using events with the custom object
- * const car = new Car();
- * car.addEventListener( 'start', ( event ) => {
- *   alert( event.message );
- * } );
- * car.start();
- * ```
- * @see {@link https://github.com/mrdoob/eventdispatcher.js | mrdoob EventDispatcher on GitHub}
- * @see {@link https://threejs.org/docs/index.html#api/en/core/EventDispatcher | Official Documentation}
- * @see {@link https://github.com/mrdoob/three.js/blob/master/src/core/EventDispatcher.js | Source}
+ *
+ * @source src/core/EventDispatcher.js
  */
 export class EventDispatcher<TEventMap extends {} = {}> {
     /**
@@ -48,10 +49,12 @@ export class EventDispatcher<TEventMap extends {} = {}> {
      * Adds a listener to an event type.
      * @param type The type of event to listen to.
      * @param listener The function that gets called when the event is fired.
+     * @param options Additional settings for event listener.
      */
     addEventListener<T extends Extract<keyof TEventMap, string>>(
         type: T,
         listener: EventListener<TEventMap[T], T, this>,
+        options?: EventListenerOptions,
     ): void;
 
     /**
@@ -76,7 +79,7 @@ export class EventDispatcher<TEventMap extends {} = {}> {
 
     /**
      * Fire an event type.
-     * @param event The event that gets fired.
+     * @param event The event object that gets fired.
      */
-    dispatchEvent<T extends Extract<keyof TEventMap, string>>(event: BaseEvent<T> & TEventMap[T]): void;
+    dispatchEvent<T extends Extract<keyof TEventMap, string>>(event: Event<T>): void;
 }
