@@ -36,7 +36,7 @@ export class GridHelper extends LineSegments<BufferGeometry, LineBasicMaterial> 
      * @override
      * @defaultValue `GridHelper`
      */
-    override readonly type: string | "GridHelper";
+    override type: string | "GridHelper";
 
     /**
      * Frees the GPU-related resources allocated by this instance

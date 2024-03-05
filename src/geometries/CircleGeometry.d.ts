@@ -33,7 +33,7 @@ export class CircleGeometry extends BufferGeometry {
      * @remarks Sub-classes will update this value.
      * @defaultValue `CircleGeometry`
      */
-    override readonly type: string | "CircleGeometry";
+    override type: string | "CircleGeometry";
 
     /**
      * An object with a property for each of the constructor parameters.

@@ -28,7 +28,7 @@ export abstract class Light<TShadowSupport extends LightShadow | undefined = Lig
      * @remarks Sub-classes will update this value.
      * @defaultValue `Light`
      */
-    override readonly type: string | "Light";
+    override type: string | "Light";
 
     /**
      * Color of the light. \

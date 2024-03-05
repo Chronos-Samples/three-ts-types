@@ -39,7 +39,7 @@ export class HemisphereLight extends Light<undefined> {
      * @remarks Sub-classes will update this value.
      * @defaultValue `HemisphereLight`
      */
-    override readonly type: string | "HemisphereLight";
+    override type: string | "HemisphereLight";
 
     /**
      * This is set equal to {@link THREE.Object3D.DEFAULT_UP}, so that the light shines from the top down.

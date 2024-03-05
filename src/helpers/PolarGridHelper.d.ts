@@ -44,7 +44,7 @@ export class PolarGridHelper extends LineSegments {
      * @override
      * @defaultValue `PolarGridHelper`
      */
-    override readonly type: string | "PolarGridHelper";
+    override type: string | "PolarGridHelper";
 
     /**
      * Frees the GPU-related resources allocated by this instance

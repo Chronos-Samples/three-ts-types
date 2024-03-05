@@ -40,7 +40,7 @@ export class AudioListener extends Object3D {
      * @remarks Sub-classes will update this value.
      * @defaultValue `AudioListener`
      */
-    readonly type: string | "AudioListener";
+    type: string | "AudioListener";
 
     /**
      * The {@link https://developer.mozilla.org/en-US/docs/Web/API/AudioContext | AudioContext} of the {@link {@link AudioListener} | listener} given in the constructor.

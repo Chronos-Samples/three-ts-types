@@ -47,7 +47,7 @@ export class RectAreaLight extends Light<undefined> {
      * @remarks Sub-classes will update this value.
      * @defaultValue `RectAreaLight`
      */
-    override readonly type: string | "RectAreaLight";
+    override type: string | "RectAreaLight";
 
     /**
      * The width of the light.

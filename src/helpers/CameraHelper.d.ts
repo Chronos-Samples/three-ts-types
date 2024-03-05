@@ -32,7 +32,7 @@ export class CameraHelper extends LineSegments {
      * @override
      * @defaultValue `CameraHelper`
      */
-    override readonly type: string | "CameraHelper";
+    override type: string | "CameraHelper";
 
     /**
      * The camera being visualized.

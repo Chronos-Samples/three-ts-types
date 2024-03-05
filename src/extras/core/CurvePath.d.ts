@@ -20,7 +20,7 @@ export class CurvePath<TVector extends Vector2 | Vector3> extends Curve<TVector>
      * @remarks Sub-classes will update this value.
      * @defaultValue `CurvePath`
      */
-    override readonly type: string | "CurvePath";
+    override type: string | "CurvePath";
 
     /**
      * The array of {@link Curve | Curves}.

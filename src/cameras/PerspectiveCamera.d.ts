@@ -41,7 +41,7 @@ export class PerspectiveCamera extends Camera {
      * @override
      * @defaultValue `PerspectiveCamera`
      */
-    override readonly type: string | "PerspectiveCamera";
+    override type: string | "PerspectiveCamera";
 
     /**
      * Gets or sets the zoom factor of the camera.

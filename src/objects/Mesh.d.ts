@@ -42,7 +42,7 @@ export class Mesh<
      * @override
      * @defaultValue `Mesh`
      */
-    override readonly type: string | "Mesh";
+    override type: string | "Mesh";
 
     /**
      * An instance of {@link THREE.BufferGeometry | BufferGeometry} (or derived classes), defining the object's structure.

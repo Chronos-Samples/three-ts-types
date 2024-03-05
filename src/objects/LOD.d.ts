@@ -37,7 +37,7 @@ export class LOD<TEventMap extends Object3DEventMap = Object3DEventMap> extends 
      * @override
      * @defaultValue `LOD`
      */
-    override readonly type: string | "LOD";
+    override type: string | "LOD";
 
     /**
      * An array of level objects

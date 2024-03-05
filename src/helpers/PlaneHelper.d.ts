@@ -27,7 +27,7 @@ export class PlaneHelper extends LineSegments {
      * @override
      * @defaultValue `PlaneHelper`
      */
-    override readonly type: string | "PlaneHelper";
+    override type: string | "PlaneHelper";
 
     /**
      * The {@link Plane | plane} being visualized.

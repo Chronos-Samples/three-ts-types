@@ -19,7 +19,7 @@ export class IcosahedronGeometry extends PolyhedronGeometry {
      * @remarks Sub-classes will update this value.
      * @defaultValue `IcosahedronGeometry`
      */
-    override readonly type: string | "IcosahedronGeometry";
+    override type: string | "IcosahedronGeometry";
 
     /** @internal */
     static fromJSON(data: {}): IcosahedronGeometry;

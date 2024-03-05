@@ -45,7 +45,7 @@ export class OrthographicCamera extends Camera {
      * @override
      * @defaultValue `OrthographicCamera`
      */
-    override readonly type: string | "OrthographicCamera";
+    override type: string | "OrthographicCamera";
 
     /**
      * Gets or sets the zoom factor of the camera.

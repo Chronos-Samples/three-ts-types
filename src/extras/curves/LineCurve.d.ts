@@ -26,7 +26,7 @@ export class LineCurve extends Curve<Vector2> {
      * @remarks Sub-classes will update this value.
      * @defaultValue `LineCurve`
      */
-    override readonly type: string | "LineCurve";
+    override type: string | "LineCurve";
 
     /**
      * The start point.

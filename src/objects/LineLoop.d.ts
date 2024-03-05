@@ -36,5 +36,5 @@ export class LineLoop<
      * @override
      * @defaultValue `LineLoop`
      */
-    override readonly type: string | "LineLoop";
+    override type: string | "LineLoop";
 }

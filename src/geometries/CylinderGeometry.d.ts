@@ -42,7 +42,7 @@ export class CylinderGeometry extends BufferGeometry {
      * @remarks Sub-classes will update this value.
      * @defaultValue `CylinderGeometry`
      */
-    override readonly type: string | "CylinderGeometry";
+    override type: string | "CylinderGeometry";
 
     /**
      * An object with a property for each of the constructor parameters.
