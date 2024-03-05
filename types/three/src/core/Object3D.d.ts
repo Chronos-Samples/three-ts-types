@@ -1,49 +1,23 @@
-import { AnimationClip } from "../animation/AnimationClip.js";
-import { Camera } from "../cameras/Camera.js";
-import { Material } from "../materials/Material.js";
-import { Euler } from "../math/Euler.js";
-import { Matrix3 } from "../math/Matrix3.js";
-import { Matrix4 } from "../math/Matrix4.js";
-import { Quaternion } from "../math/Quaternion.js";
-import { Vector3 } from "../math/Vector3.js";
-import { Group } from "../objects/Group.js";
-import { WebGLRenderer } from "../renderers/WebGLRenderer.js";
-import { Scene } from "../scenes/Scene.js";
-import { BufferGeometry } from "./BufferGeometry.js";
-import { EventDispatcher } from "./EventDispatcher.js";
-import { Layers } from "./Layers.js";
-import { Intersection, Raycaster } from "./Raycaster.js";
-
-export interface Object3DEventMap {
-    /**
-     * Fires when the object has been added to its parent object.
-     */
-    added: {};
-
-    /**
-     * Fires when the object has been removed from its parent object.
-     */
-    removed: {};
-
-    /**
-     * Fires when a new child object has been added.
-     */
-    childadded: { child: Object3D };
-
-    /**
-     * Fires when a new child object has been removed.
-     */
-    childremoved: { child: Object3D };
-}
+import { Vector3 } from '../math/Vector3';
+import { Euler } from '../math/Euler';
+import { Quaternion } from '../math/Quaternion';
+import { Matrix4 } from '../math/Matrix4';
+import { Matrix3 } from '../math/Matrix3';
+import { Layers } from './Layers';
+import { WebGLRenderer } from '../renderers/WebGLRenderer';
+import { Scene } from '../scenes/Scene';
+import { Camera } from '../cameras/Camera';
+import { Material } from '../materials/Material';
+import { Group } from '../objects/Group';
+import { Intersection, Raycaster } from './Raycaster';
+import { EventDispatcher, BaseEvent, Event } from './EventDispatcher';
+import { BufferGeometry } from './BufferGeometry';
+import { AnimationClip } from '../animation/AnimationClip';
 
 /**
- * This is the base class for most objects in three.js and provides a set of properties and methods for manipulating objects in 3D space.
- * @remarks Note that this can be used for grouping objects via the {@link THREE.Object3D.add | .add()} method which adds the object as a child,
- * however it is better to use {@link THREE.Group | Group} for this.
- * @see {@link https://threejs.org/docs/index.html#api/en/core/Object3D | Official Documentation}
- * @see {@link https://github.com/mrdoob/three.js/blob/master/src/core/Object3D.js | Source}
+ * Base class for scene graph objects
  */
-export class Object3D<TEventMap extends Object3DEventMap = Object3DEventMap> extends EventDispatcher<TEventMap> {
+export class Object3D<E extends BaseEvent = Event> extends EventDispatcher<E> {
     /**
      * This creates a new {@link Object3D} object.
      */
@@ -92,11 +66,16 @@ export class Object3D<TEventMap extends Object3DEventMap = Object3DEventMap> ext
     parent: Object3D | null;
 
     /**
+     * Scene object attached to.
+     * @default null
+     */
+    scene: Object3D | null;
+
+    /**
      * Array with object's children.
      * @see {@link THREE.Object3DGroup | Group} for info on manually grouping objects.
      * @defaultValue `[]`
      */
-
     children: Object3D[];
 
     /**
@@ -184,7 +163,25 @@ export class Object3D<TEventMap extends Object3DEventMap = Object3DEventMap> ext
      * Object gets rendered if `true`.
      * @defaultValue `true`
      */
-    visible: boolean;
+    visibilityMap: Map<string, boolean>;
+
+    /**
+     * Set if object should be rendered (default visibility layer).
+     */
+    set visible(value: boolean);
+
+    /**
+     * Get if object should be rendered.
+     * @default true
+     */
+    get visible(): boolean;
+
+    /**
+     * Set if object should be rendered (specific visibility layer).
+     * @param key - visibility layer
+     * @param value - is visible
+     */
+    setVisibility(key: string, value: boolean): void;
 
     /**
      * Whether the object gets rendered into shadow map.
