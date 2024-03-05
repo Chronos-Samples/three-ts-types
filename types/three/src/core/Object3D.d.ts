@@ -84,6 +84,28 @@ export interface Object3DEventMap {
     childremoved: { child: Object3D };
 }
 
+export interface Object3DEventMap {
+    /**
+     * Fires when the object has been added to its parent object.
+     */
+    added: {};
+
+    /**
+     * Fires when the object has been removed from its parent object.
+     */
+    removed: {};
+
+    /**
+     * Fires when a new child object has been added.
+     */
+    childadded: { child: Object3D };
+
+    /**
+     * Fires when a new child object has been removed.
+     */
+    childremoved: { child: Object3D };
+}
+
 /**
  * This is the base class for most objects in three.js and provides a set of properties and methods for manipulating objects in 3D space.
  * @remarks Note that this can be used for grouping objects via the {@link THREE.Object3D.add | .add()} method which adds the object as a child,
