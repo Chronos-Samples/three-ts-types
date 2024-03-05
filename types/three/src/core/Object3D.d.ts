@@ -14,10 +14,32 @@ import { EventDispatcher, BaseEvent, Event } from './EventDispatcher';
 import { BufferGeometry } from './BufferGeometry';
 import { AnimationClip } from '../animation/AnimationClip';
 
+export interface Object3DEventMap {
+    /**
+     * Fires when the object has been added to its parent object.
+     */
+    added: {};
+
+    /**
+     * Fires when the object has been removed from its parent object.
+     */
+    removed: {};
+
+    /**
+     * Fires when a new child object has been added.
+     */
+    childadded: { child: Object3D };
+
+    /**
+     * Fires when a new child object has been removed.
+     */
+    childremoved: { child: Object3D };
+}
+
 /**
  * Base class for scene graph objects
  */
-export class Object3D<E extends BaseEvent = Event> extends EventDispatcher<E> {
+export class Object3D<TEventMap extends Object3DEventMap = Object3DEventMap> extends EventDispatcher<TEventMap> {
     /**
      * This creates a new {@link Object3D} object.
      */
