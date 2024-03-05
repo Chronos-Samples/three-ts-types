@@ -51,9 +51,9 @@ export class EventDispatcher<TEventMap extends {} = {}> {
      * @param listener The function that gets called when the event is fired.
      * @param options Additional settings for event listener.
      */
-    addEventListener<T extends Extract<keyof TEventMap, string>>(
+    addEventListener<T extends string>(
       type: T,
-      listener: EventListener<TEventMap[T], T, this>,
+      listener: EventListener<any, T, this>,
       options?: EventListenerOptions,
     ): void;
 
@@ -62,18 +62,18 @@ export class EventDispatcher<TEventMap extends {} = {}> {
      * @param type The type of event to listen to.
      * @param listener The function that gets called when the event is fired.
      */
-    hasEventListener<T extends Extract<keyof TEventMap, string>>(type: T, listener: EventListener<TEventMap[T], T, this>): boolean;
+    hasEventListener<T extends string>(type: T, listener: EventListener<any, T, this>): boolean;
 
     /**
      * Removes a listener from an event type.
      * @param type The type of the listener that gets removed.
      * @param listener The listener function that gets removed.
      */
-    removeEventListener<T extends Extract<keyof TEventMap, string>>(type: T, listener: EventListener<TEventMap[T], T, this>): void;
+    removeEventListener<T extends string>(type: T, listener: EventListener<any, T, this>): void;
 
     /**
      * Fire an event type.
      * @param event The event object that gets fired.
      */
-    dispatchEvent<T extends Extract<keyof TEventMap, string>>(event: BaseEvent<T> & TEventMap[T]): void;
+    dispatchEvent<T extends string>(event: BaseEvent<T> & any): void;
 }
