@@ -58,7 +58,7 @@ export class EllipseCurve extends Curve<Vector2> {
      * @remarks Sub-classes will update this value.
      * @defaultValue `EllipseCurve`
      */
-    override readonly type: string | "EllipseCurve";
+    override type: string | "EllipseCurve";
 
     /**
      * The X center of the ellipse.

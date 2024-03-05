@@ -44,7 +44,7 @@ export class CubicBezierCurve3 extends Curve<Vector3> {
      * @remarks Sub-classes will update this value.
      * @defaultValue `CubicBezierCurve3`
      */
-    override readonly type: string | "CubicBezierCurve3";
+    override type: string | "CubicBezierCurve3";
 
     /**
      * The starting point.

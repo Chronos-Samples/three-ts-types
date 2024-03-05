@@ -18,7 +18,7 @@ export class DodecahedronGeometry extends PolyhedronGeometry {
      * @remarks Sub-classes will update this value.
      * @defaultValue `DodecahedronGeometry`
      */
-    override readonly type: string | "DodecahedronGeometry";
+    override type: string | "DodecahedronGeometry";
 
     /** @internal */
     static fromJSON(data: {}): DodecahedronGeometry;

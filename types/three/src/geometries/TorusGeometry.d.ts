@@ -47,7 +47,7 @@ export class TorusGeometry extends BufferGeometry {
      * @remarks Sub-classes will update this value.
      * @defaultValue `TorusGeometry`
      */
-    override readonly type: string | "TorusGeometry";
+    override type: string | "TorusGeometry";
 
     /**
      * An object with a property for each of the constructor parameters.

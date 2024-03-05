@@ -52,7 +52,7 @@ export class TubeGeometry extends BufferGeometry {
      * @remarks Sub-classes will update this value.
      * @defaultValue `TubeGeometry`
      */
-    override readonly type: string | "TubeGeometry";
+    override type: string | "TubeGeometry";
 
     /**
      * An object with a property for each of the constructor parameters.

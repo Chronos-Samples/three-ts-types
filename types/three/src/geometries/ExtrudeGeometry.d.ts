@@ -134,7 +134,7 @@ export class ExtrudeGeometry extends BufferGeometry {
      * @remarks Sub-classes will update this value.
      * @defaultValue `ExtrudeGeometry`
      */
-    override readonly type: string | "ExtrudeGeometry";
+    override type: string | "ExtrudeGeometry";
 
     /**
      * An object with a property for each of the constructor parameters.
