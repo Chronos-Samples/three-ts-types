@@ -12,7 +12,7 @@ export class Event<TEventType extends string = string, TTarget = unknown> implem
     /**
      * Creates event object.
      **/
-    constructor(eventData: { type: string } & { [prop: string]: any }, options?: EventOptions);
+    constructor(eventData: { type: TEventType } & { [prop: string]: any }, options?: EventOptions);
 
     readonly type: TEventType;
     readonly target: TTarget;
