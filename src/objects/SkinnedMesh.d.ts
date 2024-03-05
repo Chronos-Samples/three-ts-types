@@ -7,6 +7,7 @@ import { Sphere } from "../math/Sphere.js";
 import { Vector3 } from "../math/Vector3.js";
 import { Mesh } from "./Mesh.js";
 import { Skeleton } from "./Skeleton.js";
+import {Object3DEventMap} from "../core/Object3D";
 
 /**
  * A mesh that has a {@link THREE.Skeleton | Skeleton} with {@link Bone | bones} that can then be used to animate the vertices of the geometry.
@@ -50,7 +51,7 @@ import { Skeleton } from "./Skeleton.js";
 export class SkinnedMesh<
     TGeometry extends BufferGeometry = BufferGeometry,
     TMaterial extends Material | Material[] = Material | Material[],
-    TEventMap,
+    TEventMap extends Object3DEventMap = Object3DEventMap,
 > extends Mesh<TGeometry, TMaterial, TEventMap> {
     /**
      * Create a new instance of {@link SkinnedMesh}
