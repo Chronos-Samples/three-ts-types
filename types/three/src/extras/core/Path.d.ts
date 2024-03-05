@@ -37,7 +37,7 @@ export class Path extends CurvePath<Vector2> {
      * @remarks Sub-classes will update this value.
      * @defaultValue `Path`
      */
-    override readonly type: string | "Path";
+    override type: string | "Path";
 
     /**
      * The current offset of the path. Any new {@link THREE.Curve | Curve} added will start here.

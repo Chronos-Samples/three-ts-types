@@ -34,7 +34,7 @@ export class DirectionalLightHelper extends Object3D {
      * @override
      * @defaultValue `DirectionalLightHelper`
      */
-    override readonly type: string | "DirectionalLightHelper";
+    override type: string | "DirectionalLightHelper";
 
     /**
      * Contains the line mesh showing the location of the directional light.

@@ -100,7 +100,7 @@ export class TextGeometry extends ExtrudeGeometry {
      * @remarks Sub-classes will update this value.
      * @defaultValue `TextGeometry`
      */
-    override readonly type: string | "TextGeometry";
+    override type: string | "TextGeometry";
 
     /**
      * An object with a property for each of the constructor parameters.

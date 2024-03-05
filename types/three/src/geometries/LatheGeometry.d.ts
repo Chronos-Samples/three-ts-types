@@ -37,7 +37,7 @@ export class LatheGeometry extends BufferGeometry {
      * @remarks Sub-classes will update this value.
      * @defaultValue `LatheGeometry`
      */
-    override readonly type: string | "LatheGeometry";
+    override type: string | "LatheGeometry";
 
     /**
      * An object with a property for each of the constructor parameters.

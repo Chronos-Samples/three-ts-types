@@ -39,7 +39,7 @@ export class BoxGeometry extends BufferGeometry {
      * @remarks Sub-classes will update this value.
      * @defaultValue `BoxGeometry`
      */
-    override readonly type: string | "BoxGeometry";
+    override type: string | "BoxGeometry";
 
     /**
      * An object with a property for each of the constructor parameters.

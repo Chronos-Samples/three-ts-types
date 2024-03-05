@@ -30,7 +30,7 @@ export class HemisphereLightHelper extends Object3D {
      * @override
      * @defaultValue `HemisphereLightHelper`
      */
-    override readonly type: string | "HemisphereLightHelper";
+    override type: string | "HemisphereLightHelper";
 
     /**
      * Reference to the HemisphereLight being visualized.

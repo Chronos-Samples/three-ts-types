@@ -47,7 +47,7 @@ export class Shape extends Path {
      * @remarks Sub-classes will update this value.
      * @defaultValue `Shape`
      */
-    override readonly type: string | "Shape";
+    override type: string | "Shape";
 
     /**
      * {@link http://en.wikipedia.org/wiki/Universally_unique_identifier | UUID} of this object instance.

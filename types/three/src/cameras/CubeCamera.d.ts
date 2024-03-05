@@ -46,7 +46,7 @@ export class CubeCamera extends Object3D {
      * @override
      * @defaultValue `CubeCamera`
      */
-    override readonly type: string | "CubeCamera";
+    override type: string | "CubeCamera";
 
     /**
      * The destination cube render target.

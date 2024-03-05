@@ -37,5 +37,5 @@ export class ArcCurve extends EllipseCurve {
      * @remarks Sub-classes will update this value.
      * @defaultValue `ArcCurve`
      */
-    override readonly type: string | "ArcCurve";
+    override type: string | "ArcCurve";
 }

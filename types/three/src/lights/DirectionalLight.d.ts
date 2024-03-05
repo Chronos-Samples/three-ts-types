@@ -49,7 +49,7 @@ export class DirectionalLight extends Light<DirectionalLightShadow> {
      * @remarks Sub-classes will update this value.
      * @defaultValue `DirectionalLight`
      */
-    override readonly type: string | "DirectionalLight";
+    override type: string | "DirectionalLight";
 
     /**
      * Whether the object gets rendered into shadow map.

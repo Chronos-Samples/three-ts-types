@@ -36,7 +36,7 @@ export class PolyhedronGeometry extends BufferGeometry {
      * @remarks Sub-classes will update this value.
      * @defaultValue `PolyhedronGeometry`
      */
-    override readonly type: string | "PolyhedronGeometry";
+    override type: string | "PolyhedronGeometry";
 
     /**
      * An object with a property for each of the constructor parameters.

@@ -48,7 +48,7 @@ export class CatmullRomCurve3 extends Curve<Vector3> {
      * @remarks Sub-classes will update this value.
      * @defaultValue `CatmullRomCurve3`
      */
-    override readonly type: string | "CatmullRomCurve3";
+    override type: string | "CatmullRomCurve3";
 
     /**
      * The curve will loop back onto itself when this is true.

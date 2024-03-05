@@ -31,7 +31,7 @@ export class AxesHelper extends LineSegments {
      * @override
      * @defaultValue `AxesHelper`
      */
-    override readonly type: string | "AxesHelper";
+    override type: string | "AxesHelper";
 
     /**
      * Sets the axes colors to {@link Color | xAxisColor}, {@link Color | yAxisColor}, {@link Color | zAxisColor}.

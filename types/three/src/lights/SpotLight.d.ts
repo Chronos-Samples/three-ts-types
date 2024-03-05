@@ -57,7 +57,7 @@ export class SpotLight extends Light<SpotLightShadow> {
      * @remarks Sub-classes will update this value.
      * @defaultValue `SpotLight`
      */
-    override readonly type: string | "SpotLight";
+    override type: string | "SpotLight";
 
     /**
      * This is set equal to {@link THREE.Object3D.DEFAULT_UP | Object3D.DEFAULT_UP} (0, 1, 0), so that the light shines from the top down.

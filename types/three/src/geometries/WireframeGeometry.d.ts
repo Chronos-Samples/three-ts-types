@@ -28,7 +28,7 @@ export class WireframeGeometry<TBufferGeometry extends BufferGeometry = BufferGe
      * @remarks Sub-classes will update this value.
      * @defaultValue `WireframeGeometry`
      */
-    override readonly type: string | "WireframeGeometry";
+    override type: string | "WireframeGeometry";
 
     /**
      * An object with a property for each of the constructor parameters.

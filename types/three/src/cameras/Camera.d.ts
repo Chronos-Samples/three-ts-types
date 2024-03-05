@@ -31,7 +31,7 @@ export class Camera extends Object3D {
      * @override
      * @defaultValue `Camera`
      */
-    override readonly type: string | "Camera";
+    override type: string | "Camera";
 
     /**
      * @override

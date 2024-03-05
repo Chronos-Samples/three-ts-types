@@ -32,5 +32,5 @@ export class Bone<TEventMap extends Object3DEventMap = Object3DEventMap> extends
      * @override
      * @defaultValue `Bone`
      */
-    override readonly type: string | "Bone";
+    override type: string | "Bone";
 }

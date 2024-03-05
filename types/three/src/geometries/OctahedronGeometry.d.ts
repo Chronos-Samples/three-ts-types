@@ -18,7 +18,7 @@ export class OctahedronGeometry extends PolyhedronGeometry {
      * @remarks Sub-classes will update this value.
      * @defaultValue `OctahedronGeometry`
      */
-    override readonly type: string | "OctahedronGeometry";
+    override type: string | "OctahedronGeometry";
 
     /** @internal */
     static fromJSON(data: {}): OctahedronGeometry;

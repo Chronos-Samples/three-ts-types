@@ -39,7 +39,7 @@ export class RingGeometry extends BufferGeometry {
      * @remarks Sub-classes will update this value.
      * @defaultValue `RingGeometry`
      */
-    override readonly type: string | "RingGeometry";
+    override type: string | "RingGeometry";
 
     /**
      * An object with a property for each of the constructor parameters.

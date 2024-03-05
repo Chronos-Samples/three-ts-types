@@ -40,7 +40,7 @@ export class Audio<NodeType extends AudioNode = GainNode> extends Object3D {
      * @remarks Sub-classes will update this value.
      * @defaultValue `Audio`
      */
-    readonly type: string | "Audio";
+    type: string | "Audio";
 
     /**
      * A reference to the listener object of this audio.

@@ -28,7 +28,7 @@ export class Box3Helper extends LineSegments {
      * @override
      * @defaultValue `Box3Helper`
      */
-    override readonly type: string | "Box3Helper";
+    override type: string | "Box3Helper";
 
     /**
      * The Box3 being visualized.

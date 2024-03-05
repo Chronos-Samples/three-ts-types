@@ -40,7 +40,7 @@ export class SkeletonHelper extends LineSegments {
      * @override
      * @defaultValue `SkeletonHelper`
      */
-    override readonly type: string | "SkeletonHelper";
+    override type: string | "SkeletonHelper";
 
     /**
      * The list of bones that the helper renders as {@link Line | Lines}.

@@ -32,5 +32,5 @@ export class AmbientLight extends Light<undefined> {
      * @remarks Sub-classes will update this value.
      * @defaultValue `AmbientLight`
      */
-    override readonly type: string | "AmbientLight";
+    override type: string | "AmbientLight";
 }

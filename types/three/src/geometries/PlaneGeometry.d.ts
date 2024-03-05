@@ -30,7 +30,7 @@ export class PlaneGeometry extends BufferGeometry {
      * @remarks Sub-classes will update this value.
      * @defaultValue `PlaneGeometry`
      */
-    override readonly type: string | "PlaneGeometry";
+    override type: string | "PlaneGeometry";
 
     /**
      * An object with a property for each of the constructor parameters.

@@ -71,7 +71,7 @@ export class SkinnedMesh<
      * @override
      * @defaultValue `SkinnedMesh`
      */
-    override readonly type: string | "SkinnedMesh";
+    override type: string | "SkinnedMesh";
 
     /**
      * Either {@link AttachedBindMode} or {@link DetachedBindMode}. {@link AttachedBindMode} means the skinned mesh

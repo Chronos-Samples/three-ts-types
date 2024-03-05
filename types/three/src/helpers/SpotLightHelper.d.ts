@@ -32,7 +32,7 @@ export class SpotLightHelper extends Object3D {
      * @override
      * @defaultValue `SpotLightHelper`
      */
-    override readonly type: string | "SpotLightHelper";
+    override type: string | "SpotLightHelper";
 
     /**
      * {@link THREE.LineSegments | LineSegments} used to visualize the light.

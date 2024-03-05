@@ -39,5 +39,5 @@ export class Group<TEventMap extends Object3DEventMap = Object3DEventMap> extend
      * @override
      * @defaultValue `Group`
      */
-    override readonly type: string | "Group";
+    override type: string | "Group";
 }

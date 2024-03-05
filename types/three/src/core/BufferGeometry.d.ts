@@ -104,7 +104,7 @@ export class BufferGeometry<
      * @remarks Sub-classes will update this value.
      * @defaultValue `BufferGeometry`
      */
-    readonly type: string | "BufferGeometry";
+    type: string | "BufferGeometry";
 
     /**
      * Allows for vertices to be re-used across multiple triangles; this is called using "indexed triangles".

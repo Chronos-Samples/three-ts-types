@@ -33,7 +33,7 @@ export class PointLightHelper extends Object3D {
      * @override
      * @defaultValue `PointLightHelper`
      */
-    override readonly type: string | "PointLightHelper";
+    override type: string | "PointLightHelper";
 
     /**
      * The {@link THREE.PointLight | PointLight} that is being visualized.

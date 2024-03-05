@@ -35,7 +35,7 @@ export class Points<
      * @override
      * @defaultValue `Points`
      */
-    override readonly type: string | "Points";
+    override type: string | "Points";
 
     /**
      * An array of weights typically from `0-1` that specify how much of the morph is applied.

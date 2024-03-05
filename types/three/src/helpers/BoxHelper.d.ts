@@ -40,7 +40,7 @@ export class BoxHelper extends LineSegments<BufferGeometry, LineBasicMaterial> {
      * @override
      * @defaultValue `BoxHelper`
      */
-    override readonly type: string | "BoxHelper";
+    override type: string | "BoxHelper";
 
     /**
      * Updates the helper's geometry to match the dimensions of the object, including any children

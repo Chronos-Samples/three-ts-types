@@ -46,7 +46,7 @@ export class ArrowHelper extends Object3D {
      * @override
      * @defaultValue `ArrowHelper`
      */
-    override readonly type: string | "ArrowHelper";
+    override type: string | "ArrowHelper";
 
     /**
      * Contains the line part of the arrowHelper.

@@ -36,7 +36,7 @@ export class Sprite<TEventMap extends Object3DEventMap = Object3DEventMap> exten
      * @override
      * @defaultValue `Sprite`
      */
-    override readonly type: string | "Sprite";
+    override type: string | "Sprite";
 
     /**
      * Whether the object gets rendered into shadow map.
