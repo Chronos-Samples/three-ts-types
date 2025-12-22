@@ -1,16 +1,33 @@
 {
-    "private": true,
-    "name": "@types/three",
-    "version": "0.0.0-git",
+    "name": "@chronos-samples/three-ts-types",
+    "version": "1.0.0",
+    "description": "TypeScript type definitions for Three.js (Chronos-Samples fork)",
     "license": "MIT",
-    "types": "index.d.ts",
+
+    "types": "./index.d.ts",
+
+    "exports": {
+        ".": {
+            "types": "./index.d.ts"
+        },
+        "./three": {
+            "types": "./types/three/index.d.ts"
+        }
+    },
+
+    "files": [
+        "index.d.ts",
+        "types/three"
+    ],
+
     "scripts": {
-        "test-all": "node --require source-map-support/register node_modules/@definitelytyped/dtslint-runner/ --path .",
         "test": "node --require source-map-support/register node_modules/@definitelytyped/dtslint/ types/three",
         "lint": "node --require source-map-support/register node_modules/@definitelytyped/dtslint/ types/three",
+        "test-all": "node --require source-map-support/register node_modules/@definitelytyped/dtslint-runner/ --path .",
         "format": "dprint fmt",
         "format-check": "dprint check"
     },
+
     "devDependencies": {
         "@definitelytyped/definitions-parser": "latest",
         "@definitelytyped/dts-critic": "latest",
@@ -25,5 +42,10 @@
         "dprint": "^0.45.0",
         "source-map-support": "^0.5.21",
         "typescript": "latest"
+    },
+
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Chronos-Samples/three-ts-types.git"
     }
 }
