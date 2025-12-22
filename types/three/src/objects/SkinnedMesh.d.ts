@@ -1,5 +1,6 @@
 import { BindMode } from "../constants.js";
 import { BufferGeometry } from "../core/BufferGeometry.js";
+import { Object3DEventMap } from "../core/Object3D";
 import { Material } from "../materials/Material.js";
 import { Box3 } from "../math/Box3.js";
 import { Matrix4 } from "../math/Matrix4.js";
@@ -7,7 +8,6 @@ import { Sphere } from "../math/Sphere.js";
 import { Vector3 } from "../math/Vector3.js";
 import { Mesh } from "./Mesh.js";
 import { Skeleton } from "./Skeleton.js";
-import {Object3DEventMap} from "../core/Object3D";
 
 /**
  * A mesh that has a {@link THREE.Skeleton | Skeleton} with {@link Bone | bones} that can then be used to animate the vertices of the geometry.

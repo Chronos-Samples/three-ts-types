@@ -1,18 +1,18 @@
-import { Vector3 } from '../math/Vector3';
-import { Euler } from '../math/Euler';
-import { Quaternion } from '../math/Quaternion';
-import { Matrix4 } from '../math/Matrix4';
-import { Matrix3 } from '../math/Matrix3';
-import { Layers } from './Layers';
-import { WebGLRenderer } from '../renderers/WebGLRenderer';
-import { Scene } from '../scenes/Scene';
-import { Camera } from '../cameras/Camera';
-import { Material } from '../materials/Material';
-import { Group } from '../objects/Group';
-import { Intersection, Raycaster } from './Raycaster';
-import { EventDispatcher } from './EventDispatcher';
-import { BufferGeometry } from './BufferGeometry';
-import { AnimationClip } from '../animation/AnimationClip';
+import { AnimationClip } from "../animation/AnimationClip";
+import { Camera } from "../cameras/Camera";
+import { Material } from "../materials/Material";
+import { Euler } from "../math/Euler";
+import { Matrix3 } from "../math/Matrix3";
+import { Matrix4 } from "../math/Matrix4";
+import { Quaternion } from "../math/Quaternion";
+import { Vector3 } from "../math/Vector3";
+import { Group } from "../objects/Group";
+import { WebGLRenderer } from "../renderers/WebGLRenderer";
+import { Scene } from "../scenes/Scene";
+import { BufferGeometry } from "./BufferGeometry";
+import { EventDispatcher } from "./EventDispatcher";
+import { Layers } from "./Layers";
+import { Intersection, Raycaster } from "./Raycaster";
 
 export interface Object3DEventMap {
     /**
