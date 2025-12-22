@@ -1,12 +1,9 @@
 {
     "private": true,
+    "name": "@types/three",
+    "version": "0.0.0-git",
     "license": "MIT",
     "types": "index.d.ts",
-    "exports": {
-        ".": {
-            "types": "./index.d.ts"
-        }
-    },
     "scripts": {
         "test-all": "node --require source-map-support/register node_modules/@definitelytyped/dtslint-runner/ --path .",
         "test": "node --require source-map-support/register node_modules/@definitelytyped/dtslint/ types/three",
