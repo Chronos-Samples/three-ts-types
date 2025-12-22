@@ -11,7 +11,7 @@ export interface BaseEvent<TEventType extends string = string> {
 export class Event<TEventType extends string = string, TTarget = unknown> {
     /**
      * Creates event object.
-     **/
+     */
     constructor(eventData: { type: TEventType } & { [prop: string]: any }, options?: EventOptions);
 
     type: TEventType;
