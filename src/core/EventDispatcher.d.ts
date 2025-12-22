@@ -11,7 +11,7 @@ export interface BaseEvent<TEventType extends string = string> {
 export class Event<TEventType extends string = string, TTarget = unknown> implements BaseEvent {
     /**
      * Creates event object.
-     **/
+     */
     constructor(eventData: { type: TEventType } & { [prop: string]: any }, options?: EventOptions);
 
     readonly type: TEventType;
@@ -31,7 +31,7 @@ export interface EventListenerOptions {
 }
 
 export type EventListener<TEventData, TEventType extends string, TTarget> = (
-  event: TEventData & Event<TEventType, TTarget>,
+    event: TEventData & Event<TEventType, TTarget>,
 ) => void;
 
 /**
@@ -52,9 +52,9 @@ export class EventDispatcher<TEventMap extends {} = {}> {
      * @param options Additional settings for event listener.
      */
     addEventListener<T extends string>(
-      type: T,
-      listener: EventListener<any, T, this>,
-      options?: EventListenerOptions,
+        type: T,
+        listener: EventListener<any, T, this>,
+        options?: EventListenerOptions,
     ): void;
 
     /**
