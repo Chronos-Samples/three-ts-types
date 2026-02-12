@@ -140,11 +140,16 @@ export class Object3D<TEventMap extends Object3DEventMap = Object3DEventMap> ext
     parent: Object3D | null;
 
     /**
+     * Scene object attached to.
+     * @default null
+     */
+    scene: Object3D | null;
+
+    /**
      * Array with object's children.
      * @see {@link THREE.Object3DGroup | Group} for info on manually grouping objects.
      * @defaultValue `[]`
      */
-
     children: Object3D[];
 
     /**
@@ -232,7 +237,25 @@ export class Object3D<TEventMap extends Object3DEventMap = Object3DEventMap> ext
      * Object gets rendered if `true`.
      * @defaultValue `true`
      */
-    visible: boolean;
+    visibilityMap: Map<string, boolean>;
+
+    /**
+     * Set if object should be rendered (default visibility layer).
+     */
+    set visible(value: boolean);
+
+    /**
+     * Get if object should be rendered.
+     * @default true
+     */
+    get visible(): boolean;
+
+    /**
+     * Set if object should be rendered (specific visibility layer).
+     * @param key - visibility layer
+     * @param value - is visible
+     */
+    setVisibility(key: string, value: boolean): void;
 
     /**
      * Whether the object gets rendered into shadow map.
@@ -679,7 +702,7 @@ export class Object3D<TEventMap extends Object3DEventMap = Object3DEventMap> ext
      * Convert the object to three.js {@link https://github.com/mrdoob/three.js/wiki/JSON-Object-Scene-format-4 | JSON Object/Scene format}.
      * @param meta Object containing metadata such as materials, textures or images for the object.
      */
-    toJSON(meta?: JSONMeta): Object3DJSON;
+    toJSON(meta?: { geometries: any; materials: any; textures: any; images: any }): any;
 
     /**
      * Returns a clone of `this` object and optionally all descendants.
@@ -688,11 +711,10 @@ export class Object3D<TEventMap extends Object3DEventMap = Object3DEventMap> ext
     clone(recursive?: boolean): this;
 
     /**
-     * Copies the given object into this object.
-     * @remarks Event listeners and user-defined callbacks ({@link .onAfterRender} and {@link .onBeforeRender}) are not copied.
-     * @param object
-     * @param recursive If set to `true`, descendants of the object are copied next to the existing ones. If set to
-     * `false`, descendants are left unchanged. Default is `true`.
+     * Copy the given object into this object
+     * @remarks Note: event listeners and user-defined callbacks ({@link onAfterRender | .onAfterRender} and {@link onBeforeRender | .onBeforeRender}) are not copied.
+     * @param source
+     * @param recursive If true, descendants of the object are also copied. Default `true`
      */
-    copy(object: Object3D, recursive?: boolean): this;
+    copy(source: this, recursive?: boolean): this;
 }
