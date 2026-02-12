@@ -47,7 +47,7 @@ export class Line<
      * @override
      * @defaultValue `Line`
      */
-    override readonly type: string | "Line";
+    override type: string | "Line";
 
     /**
      * Vertices representing the {@link Line} segment(s).

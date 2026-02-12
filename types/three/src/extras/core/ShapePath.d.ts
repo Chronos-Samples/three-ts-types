@@ -22,7 +22,7 @@ export class ShapePath {
      * @remarks Sub-classes will update this value.
      * @defaultValue `ShapePath`
      */
-    readonly type: "ShapePath";
+    type: "ShapePath";
 
     /**
      * Array of {@link THREE.Path | Path's}s.

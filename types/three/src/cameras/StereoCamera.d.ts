@@ -11,7 +11,7 @@ export class StereoCamera {
      * The type property is used for detecting the object type
      * in context of serialization/deserialization.
      */
-    readonly type: string;
+    type: string;
     /**
      * The aspect.
      *

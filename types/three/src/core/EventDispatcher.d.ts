@@ -2,7 +2,7 @@
  * The minimal basic Event that can be dispatched by a {@link EventDispatcher<>}.
  */
 export interface BaseEvent<TEventType extends string = string> {
-    readonly type: TEventType;
+    type: TEventType;
 }
 
 /**
@@ -14,7 +14,7 @@ export class Event<TEventType extends string = string, TTarget = unknown> implem
      */
     constructor(eventData: { type: TEventType } & { [prop: string]: any }, options?: EventOptions);
 
-    readonly type: TEventType;
+    type: TEventType;
     readonly target: TTarget;
     private path: Array<EventDispatcher> | null;
     [attachment: string]: any;

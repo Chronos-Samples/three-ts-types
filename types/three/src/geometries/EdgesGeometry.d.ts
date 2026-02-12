@@ -28,7 +28,7 @@ export class EdgesGeometry<TBufferGeometry extends BufferGeometry = BufferGeomet
      * @remarks Sub-classes will update this value.
      * @defaultValue `EdgesGeometry`
      */
-    override readonly type: string | "EdgesGeometry";
+    override type: string | "EdgesGeometry";
 
     /**
      * An object with a property for each of the constructor parameters.

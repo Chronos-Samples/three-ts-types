@@ -37,7 +37,7 @@ export class CapsuleGeometry extends BufferGeometry {
      * @remarks Sub-classes will update this value.
      * @defaultValue `CapsuleGeometry`
      */
-    override readonly type: string | "CapsuleGeometry";
+    override type: string | "CapsuleGeometry";
 
     /**
      * An object with a property for each of the constructor parameters.

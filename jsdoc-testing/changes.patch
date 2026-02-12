@@ -2083,7 +2083,7 @@ index 929bf5258..c4d22b7da 100644
 -     * @type {string}
 -     * @readonly
       */
-     readonly type: string;
+     type: string;
      /**
       * The aspect.
       *
@@ -3915,7 +3915,7 @@ index c05cd91f7..44750427d 100644
 -     * @type {string}
 -     * @readonly
 -     */
--    readonly type: string;
+-    type: string;
      /**
       * Defines the blending type of the material.
       *

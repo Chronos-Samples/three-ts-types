@@ -37,5 +37,5 @@ export class LineSegments<
      * @override
      * @defaultValue `LineSegments`
      */
-    override readonly type: string | "LineSegments";
+    override type: string | "LineSegments";
 }
