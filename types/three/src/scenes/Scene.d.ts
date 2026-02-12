@@ -100,5 +100,5 @@ export class Scene extends Object3D {
      */
     overrideMaterial: Material | null;
     copy(source: Scene, recursive?: boolean): this;
-    toJSON(meta?: JSONMeta): SceneJSON;
+    toJSON(meta?: any): any;
 }
