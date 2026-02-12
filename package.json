@@ -1,6 +1,7 @@
 {
     "private": true,
     "license": "MIT",
+    "name": "@types/three",
     "scripts": {
         "test-all": "node --enable-source-maps node_modules/@definitelytyped/dtslint-runner/ --path .",
         "test": "node --enable-source-maps node_modules/@definitelytyped/dtslint/ types/three",
