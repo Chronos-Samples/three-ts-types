@@ -1,6 +1,0 @@
-packages:
-  - examples-testing
-  - jsdoc-testing
-  - types/three
-onlyBuiltDependencies:
-  - dprint
