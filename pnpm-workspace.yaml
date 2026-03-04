@@ -1,9 +1,0 @@
-packages:
-  - examples-testing
-  - jsdoc-testing
-  - tsl-testing
-  - types/three
-
-onlyBuiltDependencies:
-  - dprint
-  - esbuild

@@ -1,4 +1,4 @@
-import { BufferAttributeJSON } from "./../core/BufferAttribute.js";
+import { BufferAttributeJSON } from "../core/BufferAttribute.js";
 import { BufferGeometry } from "../core/BufferGeometry.js";
 import { InstancedBufferAttribute } from "../core/InstancedBufferAttribute.js";
 import { JSONMeta, Object3DEventMap } from "../core/Object3D.js";
