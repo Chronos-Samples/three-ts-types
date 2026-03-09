@@ -678,9 +678,8 @@ export class Object3D extends EventDispatcher {
 
     /**
      * Convert the object to three.js {@link https://github.com/mrdoob/three.js/wiki/JSON-Object-Scene-format-4 | JSON Object/Scene format}.
-     * @param meta Object containing metadata such as materials, textures or images for the object.
      */
-    toJSON(meta?: JSONMeta): Object3DJSON;
+    toJSON(): unknown;
 
     /**
      * Returns a clone of `this` object and optionally all descendants.
