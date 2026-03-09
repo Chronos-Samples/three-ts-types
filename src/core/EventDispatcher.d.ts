@@ -1,21 +1,21 @@
 /**
- * The minimal basic Event that can be dispatched by a {@link EventDispatcher}.
+ * The minimal basic Event that can be dispatched by a {@link EventDispatcher<>}.
  */
 export interface BaseEvent<TEventType extends string = string> {
     readonly type: TEventType;
 }
 
 /**
- * The minimal expected contract of a fired Event that was dispatched by a {@link EventDispatcher}.
+ * Event object.
  */
-export class Event<TEventType extends string = string, TTarget = unknown> {
+export class Event<TEventType extends string = string, TTarget = unknown> implements BaseEvent {
     /**
      * Creates event object.
      */
     constructor(eventData: { type: TEventType } & { [prop: string]: any }, options?: EventOptions);
 
-    type: TEventType;
-    target?: TTarget;
+    readonly type: TEventType;
+    readonly target: TTarget;
     private path: Array<EventDispatcher> | null;
     [attachment: string]: any;
     stopQueue: () => void;
@@ -30,8 +30,8 @@ export interface EventListenerOptions {
     priority?: number;
 }
 
-export type EventListener<TEventType extends string = string, TTarget = unknown> = (
-    event: Event<TEventType, TTarget>,
+export type EventListener<TEventData, TEventType extends string, TTarget> = (
+    event: TEventData & Event<TEventType, TTarget>,
 ) => void;
 
 /**
@@ -39,9 +39,9 @@ export type EventListener<TEventType extends string = string, TTarget = unknown>
  *
  * @source src/core/EventDispatcher.js
  */
-export class EventDispatcher {
+export class EventDispatcher<TEventMap extends {} = {}> {
     /**
-     * Creates {@link THREE.EventDispatcher | EventDispatcher} object.
+     * Creates eventDispatcher object. It needs to be call with '.call' to add the functionality to an object.
      */
     constructor();
 
@@ -51,25 +51,29 @@ export class EventDispatcher {
      * @param listener The function that gets called when the event is fired.
      * @param options Additional settings for event listener.
      */
-    addEventListener(type: string, listener: EventListener<string, unknown>, options?: EventListenerOptions): void;
+    addEventListener<T extends string>(
+        type: T,
+        listener: EventListener<any, T, this>,
+        options?: EventListenerOptions,
+    ): void;
 
     /**
      * Checks if listener is added to an event type.
      * @param type The type of event to listen to.
      * @param listener The function that gets called when the event is fired.
      */
-    hasEventListener(type: string, listener: EventListener<string, unknown>): boolean;
+    hasEventListener<T extends string>(type: T, listener: EventListener<any, T, this>): boolean;
 
     /**
      * Removes a listener from an event type.
      * @param type The type of the listener that gets removed.
      * @param listener The listener function that gets removed.
      */
-    removeEventListener(type: string, listener: EventListener<string, unknown>): void;
+    removeEventListener<T extends string>(type: T, listener: EventListener<any, T, this>): void;
 
     /**
      * Fire an event type.
      * @param event The event object that gets fired.
      */
-    dispatchEvent(event: Event<string, unknown>): void;
+    dispatchEvent<T extends string>(event: BaseEvent<T> & any): void;
 }
