@@ -1,66 +1,44 @@
 import * as THREE from "three";
 
-// Test for legacy usage
-const eveDisForAnyEvent = new THREE.EventDispatcher<Record<string, { [key: string]: unknown }>>();
-eveDisForAnyEvent.addEventListener("eventA", e => {
-    e.type; // $ExpectType "eventA"
-    e.target; // $ExpectType EventDispatcher<Record<string, { [key: string]: unknown; }>>
-    // @ts-expect-error
-    e.bar();
-});
-eveDisForAnyEvent.dispatchEvent({ type: "eventA" });
-eveDisForAnyEvent.dispatchEvent({ type: "eventB", otherProp: 42 });
+const dispatcher = new THREE.EventDispatcher();
 
-eveDisForAnyEvent.removeEventListener("eventA", e => {
-    e.type; // $ExpectType "eventA"
-    e.target; // $ExpectType EventDispatcher<Record<string, { [key: string]: unknown; }>>
-});
-eveDisForAnyEvent.hasEventListener("eventA", e => {
-    e.type; // $ExpectType "eventA"
-    e.target; // $ExpectType EventDispatcher<Record<string, { [key: string]: unknown; }>>
+dispatcher.addEventListener("eventA", e => {
+    e.type; // $ExpectType string
+    e.target; // $ExpectType EventDispatcher
+    e.foo; // $ExpectType any
 });
 
-// Test for typed events
-interface TestEvent {
-    foo: { foo: number };
-    bar: { bar: string };
-}
-
-const eveDisForTestEvent = new THREE.EventDispatcher<TestEvent>();
-eveDisForTestEvent.addEventListener("foo", e => {
-    e.type; // $ExpectType "foo"
-    e.target; // $ExpectType EventDispatcher<TestEvent>
-    e.foo; // $ExpectType number
-    // @ts-expect-error
-    e.bar;
+dispatcher.addEventListener("any-event-name", e => {
+    e.type; // $ExpectType string
+    e.target; // $ExpectType EventDispatcher
+    e.payload; // $ExpectType any
 });
-eveDisForTestEvent.addEventListener("bar", e => {
-    e.type; // $ExpectType "bar"
-    e.target; // $ExpectType EventDispatcher<TestEvent>
-    e.bar; // $ExpectType string
-    // @ts-expect-error
-    e.foo;
+
+dispatcher.dispatchEvent(new THREE.Event({ type: "eventA" }));
+dispatcher.dispatchEvent(new THREE.Event({ type: "eventB", otherProp: 42 }));
+dispatcher.dispatchEvent(new THREE.Event({ type: "finished", direction: -1, action: {} as THREE.AnimationAction }));
+
+// @ts-expect-error
+dispatcher.dispatchEvent({ type: "eventA" });
+
+dispatcher.removeEventListener("eventA", e => {
+    e.type; // $ExpectType string
+    e.target; // $ExpectType EventDispatcher
+});
+
+dispatcher.hasEventListener("eventA", e => {
+    e.type; // $ExpectType string
+    e.target; // $ExpectType EventDispatcher
 });
 
 // @ts-expect-error
-eveDisForTestEvent.addEventListener("baz", e => {});
+new THREE.EventDispatcher<Record<string, { foo: number }>>();
 
-eveDisForTestEvent.dispatchEvent({ type: "foo", foo: 42 });
-eveDisForTestEvent.dispatchEvent({ type: "bar", bar: "42" });
 // @ts-expect-error
-eveDisForTestEvent.dispatchEvent({ type: "zzzz", shouldWork: "42" });
-// @ts-expect-error
-eveDisForTestEvent.dispatchEvent({ type: "eventA" });
+new THREE.Object3D<Record<string, { foo: number }>>();
 
-// call dispatchEvent with an invalid event
 // @ts-expect-error
-eveDisForTestEvent.dispatchEvent({ type: "foo", foo: "42" });
-// @ts-expect-error
-eveDisForTestEvent.dispatchEvent({ type: "foo", bar: "42" });
-// @ts-expect-error
-eveDisForTestEvent.dispatchEvent({ type: "bar", bar: 42 });
-// @ts-expect-error
-eveDisForTestEvent.dispatchEvent({ bar: 42 });
+new THREE.Group<Record<string, { foo: number }>>();
 
-eveDisForTestEvent.removeEventListener("bar", () => {});
-eveDisForTestEvent.hasEventListener("bar", () => {});
+// @ts-expect-error
+dispatcher.dispatchEvent({ otherProp: 42 });

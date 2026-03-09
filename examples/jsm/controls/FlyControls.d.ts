@@ -1,17 +1,10 @@
 import { Camera, Controls } from "three";
 
-export interface FlyControlsEventMap {
-    /**
-     * Fires when the camera has been transformed by the controls.
-     */
-    change: {};
-}
-
 /**
  * {@link FlyControls} enables a navigation similar to fly modes in DCC tools like Blender. You can arbitrarily
  * transform the camera in 3D space without any limitations (e.g. focus on a specific target).
  */
-declare class FlyControls extends Controls<FlyControlsEventMap> {
+declare class FlyControls extends Controls {
     /**
      * The movement speed. Default is `1`.
      */

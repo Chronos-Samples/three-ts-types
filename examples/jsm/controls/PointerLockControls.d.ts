@@ -1,27 +1,10 @@
 import { Camera, Controls, Vector3 } from "three";
 
-export interface PointerLockControlsEventMap {
-    /**
-     * Fires when the user moves the mouse.
-     */
-    change: {};
-
-    /**
-     * Fires when the pointer lock status is "locked" (in other words: the mouse is captured).
-     */
-    lock: {};
-
-    /**
-     * Fires when the pointer lock status is "unlocked" (in other words: the mouse is not captured anymore).
-     */
-    unlock: {};
-}
-
 /**
  * The implementation of this class is based on the [Pointer Lock API]{@link https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API}.
  * {@link PointerLockControls} is a perfect choice for first person 3D games.
  */
-declare class PointerLockControls extends Controls<PointerLockControlsEventMap> {
+declare class PointerLockControls extends Controls {
     /**
      * Whether or not the controls are locked.
      */

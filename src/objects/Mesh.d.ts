@@ -1,5 +1,5 @@
 import { BufferGeometry } from "../core/BufferGeometry.js";
-import { JSONMeta, Object3D, Object3DEventMap, Object3DJSON, Object3DJSONObject } from "../core/Object3D.js";
+import { JSONMeta, Object3D, Object3DJSON, Object3DJSONObject } from "../core/Object3D.js";
 import { Material } from "../materials/Material.js";
 import { Vector3 } from "../math/Vector3.js";
 
@@ -30,8 +30,7 @@ export interface MeshJSON extends Object3DJSON {
 export class Mesh<
     TGeometry extends BufferGeometry = BufferGeometry,
     TMaterial extends Material | Material[] = Material | Material[],
-    TEventMap extends Object3DEventMap = Object3DEventMap,
-> extends Object3D<TEventMap> {
+> extends Object3D {
     /**
      * Create a new instance of {@link Mesh}
      * @param geometry An instance of {@link THREE.BufferGeometry | BufferGeometry}. Default {@link THREE.BufferGeometry | `new THREE.BufferGeometry()`}.

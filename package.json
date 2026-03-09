@@ -28,9 +28,6 @@
         "fflate": "~0.8.2",
         "meshoptimizer": "~1.0.1"
     },
-    "devDependencies": {
-        "@types/three": "workspace:."
-    },
     "owners": [
         {
             "name": "Josh Ellis",

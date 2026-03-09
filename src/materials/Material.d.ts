@@ -526,7 +526,7 @@ export interface MaterialJSON {
  *
  * @abstract
  */
-export class Material extends EventDispatcher<{ dispose: {} }> {
+export class Material extends EventDispatcher {
     /**
      * This flag can be used for type testing.
      *

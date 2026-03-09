@@ -1,6 +1,6 @@
 import { BindMode } from "../constants.js";
 import { BufferGeometry } from "../core/BufferGeometry.js";
-import { JSONMeta, Object3DEventMap } from "../core/Object3D.js";
+import { JSONMeta } from "../core/Object3D.js";
 import { Material } from "../materials/Material.js";
 import { Box3 } from "../math/Box3.js";
 import { Matrix4, Matrix4Tuple } from "../math/Matrix4.js";
@@ -59,8 +59,7 @@ export interface SkinnedMeshJSON extends MeshJSON {
 export class SkinnedMesh<
     TGeometry extends BufferGeometry = BufferGeometry,
     TMaterial extends Material | Material[] = Material | Material[],
-    TEventMap extends Object3DEventMap = Object3DEventMap,
-> extends Mesh<TGeometry, TMaterial, TEventMap> {
+> extends Mesh<TGeometry, TMaterial> {
     /**
      * Create a new instance of {@link SkinnedMesh}
      * @param geometry An instance of {@link THREE.BufferGeometry | BufferGeometry}. Default {@link THREE.BufferGeometry | `new THREE.BufferGeometry()`}.

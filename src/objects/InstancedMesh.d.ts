@@ -1,7 +1,7 @@
 import { BufferAttributeJSON } from "../core/BufferAttribute.js";
 import { BufferGeometry } from "../core/BufferGeometry.js";
 import { InstancedBufferAttribute } from "../core/InstancedBufferAttribute.js";
-import { JSONMeta, Object3DEventMap } from "../core/Object3D.js";
+import { JSONMeta } from "../core/Object3D.js";
 import { Material } from "../materials/Material.js";
 import { Box3 } from "../math/Box3.js";
 import { Color } from "../math/Color.js";
@@ -20,10 +20,6 @@ export interface InstancedMeshJSON extends MeshJSONObject {
     object: InstancedMeshJSONObject;
 }
 
-export interface InstancedMeshEventMap extends Object3DEventMap {
-    dispose: {};
-}
-
 /**
  * A special version of {@link THREE.Mesh | Mesh} with instanced rendering support
  * @remarks
@@ -39,8 +35,7 @@ export interface InstancedMeshEventMap extends Object3DEventMap {
 export class InstancedMesh<
     TGeometry extends BufferGeometry = BufferGeometry,
     TMaterial extends Material | Material[] = Material | Material[],
-    TEventMap extends InstancedMeshEventMap = InstancedMeshEventMap,
-> extends Mesh<TGeometry, TMaterial, TEventMap> {
+> extends Mesh<TGeometry, TMaterial> {
     /**
      * Read-only flag to check if a given object is of type {@link InstancedMesh}.
      * @remarks This is a _constant_ value

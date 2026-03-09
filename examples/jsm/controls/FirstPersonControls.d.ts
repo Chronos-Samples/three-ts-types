@@ -3,7 +3,7 @@ import { Camera, Controls, Vector3 } from "three";
 /**
  * This class is an alternative implementation of {@link FlyControls}.
  */
-declare class FirstPersonControls extends Controls<{}> {
+declare class FirstPersonControls extends Controls {
     /**
      * The movement speed. Default is *1*.
      */

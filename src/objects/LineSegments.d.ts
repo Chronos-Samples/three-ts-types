@@ -1,5 +1,4 @@
 import { BufferGeometry } from "../core/BufferGeometry.js";
-import { Object3DEventMap } from "../core/Object3D.js";
 import { Material } from "../materials/Material.js";
 import { Line } from "./Line.js";
 
@@ -15,8 +14,7 @@ import { Line } from "./Line.js";
 export class LineSegments<
     TGeometry extends BufferGeometry = BufferGeometry,
     TMaterial extends Material | Material[] = Material | Material[],
-    TEventMap extends Object3DEventMap = Object3DEventMap,
-> extends Line<TGeometry, TMaterial, TEventMap> {
+> extends Line<TGeometry, TMaterial> {
     /**
      * Create a new instance of {@link LineSegments}
      * @param geometry Pair(s) of vertices representing each line segment(s). Default {@link THREE.BufferGeometry | `new THREE.BufferGeometry()`}.

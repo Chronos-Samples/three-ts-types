@@ -75,7 +75,7 @@ export interface NodeChild {
  *
  * @augments EventDispatcher
  */
-declare class NodeClass extends EventDispatcher<{ dispose: {} }> {
+declare class NodeClass extends EventDispatcher {
     static get type(): string;
     /**
      * Constructs a new node.

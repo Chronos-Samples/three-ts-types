@@ -4,17 +4,12 @@ import { Vector4 } from "../../math/Vector4.js";
 import { DepthTexture } from "../../textures/DepthTexture.js";
 import { FramebufferTexture } from "../../textures/FramebufferTexture.js";
 
-export interface CanvasTargetEventMap {
-    resize: {};
-    dispose: {};
-}
-
 /**
  * CanvasTarget is a class that represents the final output destination of the renderer.
  *
  * @augments EventDispatcher
  */
-declare class CanvasTarget extends EventDispatcher<CanvasTargetEventMap> {
+declare class CanvasTarget extends EventDispatcher {
     /**
      * Constructs a new CanvasTarget.
      *

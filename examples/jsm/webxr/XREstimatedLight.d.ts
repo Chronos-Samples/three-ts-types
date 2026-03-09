@@ -1,4 +1,4 @@
-import { DirectionalLight, Group, LightProbe, Object3DEventMap, Texture, WebGLRenderer } from "three";
+import { DirectionalLight, Group, LightProbe, Texture, WebGLRenderer } from "three";
 
 export class SessionLightProbe {
     xrLight: XREstimatedLight;
@@ -23,17 +23,6 @@ export class SessionLightProbe {
     dispose: () => void;
 }
 
-export interface XREstimatedLightEventMap extends Object3DEventMap {
-    /**
-     * Fires when the estimated lighting values start being updated.
-     */
-    estimationstart: {};
-    /**
-     * Fires when the estimated lighting values stop being updated.
-     */
-    estimationend: {};
-}
-
 /**
  * XREstimatedLight uses WebXR's light estimation to create a light probe, a directional light, and (optionally) an
  * environment map that model the user's real-world environment and lighting.
@@ -48,7 +37,7 @@ export interface XREstimatedLightEventMap extends Object3DEventMap {
  *
  * To use this, as with all files in the /examples directory, you will have to include the file separately in your HTML.
  */
-export class XREstimatedLight extends Group<XREstimatedLightEventMap> {
+export class XREstimatedLight extends Group {
     lightProbe: LightProbe;
 
     directionalLight: DirectionalLight;

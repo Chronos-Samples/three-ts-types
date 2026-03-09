@@ -43,5 +43,4 @@ export type {
     WebXRArrayCamera,
     WebXRCamera,
     WebXRManager,
-    WebXRManagerEventMap,
 } from "./renderers/webxr/WebXRManager.js";

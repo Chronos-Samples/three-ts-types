@@ -6,28 +6,11 @@ export type ArcballControlsMouseActionMouse = 0 | 1 | 2 | "WHEEL";
 
 export type ArcballControlsMouseActionKey = "SHIFT" | "CTRL";
 
-export interface ArcballControlsEventMap {
-    /**
-     * Fires when the camera has been transformed by the controls.
-     */
-    change: {};
-
-    /**
-     * Fires when an interaction was initiated.
-     */
-    start: {};
-
-    /**
-     * Fires when an interaction has finished.
-     */
-    end: {};
-}
-
 /**
  * Arcball controls allow the camera to be controlled by a virtual trackball with full touch support and advanced
  * navigation functionality.
  */
-declare class ArcballControls extends Controls<ArcballControlsEventMap> {
+declare class ArcballControls extends Controls {
     /**
      * The scene rendered by the camera.
      */

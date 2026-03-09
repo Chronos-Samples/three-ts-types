@@ -1,28 +1,11 @@
 import { Camera, Controls, MOUSE, Vector3 } from "three";
 
-export interface TrackballControlsEventMap {
-    /**
-     * Fires when the camera has been transformed by the controls.
-     */
-    change: {};
-
-    /**
-     * Fires when an interaction (e.g. touch) was initiated.
-     */
-    start: {};
-
-    /**
-     * Fires when an interaction has finished.
-     */
-    end: {};
-}
-
 /**
  * TrackballControls is similar to {@link OrbitControls}. However, it does not maintain a constant camera
  * [up]{@link Object3D.up} vector. That means if the camera orbits over the “north” and “south” poles, it does not flip
  * to stay "right side up".
  */
-declare class TrackballControls extends Controls<TrackballControlsEventMap> {
+declare class TrackballControls extends Controls {
     /**
      * Represents the properties of the screen. Automatically set when {@link .handleResize}() is called.
      *  - left: Represents the offset in pixels to the screen's left boundary.

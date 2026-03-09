@@ -1,5 +1,5 @@
 import { BufferGeometry } from "../core/BufferGeometry.js";
-import { Object3D, Object3DEventMap } from "../core/Object3D.js";
+import { Object3D } from "../core/Object3D.js";
 import { SpriteMaterial } from "../materials/Materials.js";
 import { Vector2 } from "../math/Vector2.js";
 
@@ -18,7 +18,7 @@ import { Vector2 } from "../math/Vector2.js";
  * @see {@link https://threejs.org/docs/index.html#api/en/objects/Sprite | Official Documentation}
  * @see {@link https://github.com/mrdoob/three.js/blob/master/src/objects/Sprite.js | Source}
  */
-export class Sprite<TEventMap extends Object3DEventMap = Object3DEventMap> extends Object3D<TEventMap> {
+export class Sprite extends Object3D {
     /**
      * Creates a new Sprite.
      * @param material An instance of {@link THREE.SpriteMaterial | SpriteMaterial}. Default {@link THREE.SpriteMaterial | `new SpriteMaterial()`}, _with white color_.

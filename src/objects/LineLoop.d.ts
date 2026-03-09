@@ -1,5 +1,4 @@
 import { BufferGeometry } from "../core/BufferGeometry.js";
-import { Object3DEventMap } from "../core/Object3D.js";
 import { Material } from "../materials/Material.js";
 import { Line } from "./Line.js";
 
@@ -16,8 +15,7 @@ import { Line } from "./Line.js";
 export class LineLoop<
     TGeometry extends BufferGeometry = BufferGeometry,
     TMaterial extends Material | Material[] = Material | Material[],
-    TEventMap extends Object3DEventMap = Object3DEventMap,
-> extends Line<TGeometry, TMaterial, TEventMap> {
+> extends Line<TGeometry, TMaterial> {
     /**
      * Create a new instance of {@link LineLoop}
      * @param geometry  List of vertices representing points on the line loop. Default {@link THREE.BufferGeometry | `new THREE.BufferGeometry()`}.

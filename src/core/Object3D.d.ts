@@ -62,50 +62,6 @@ export interface JSONMeta {
     nodes: Record<string, unknown>;
 }
 
-export interface Object3DEventMap {
-    /**
-     * Fires when the object has been added to its parent object.
-     */
-    added: {};
-
-    /**
-     * Fires when the object has been removed from its parent object.
-     */
-    removed: {};
-
-    /**
-     * Fires when a new child object has been added.
-     */
-    childadded: { child: Object3D };
-
-    /**
-     * Fires when a new child object has been removed.
-     */
-    childremoved: { child: Object3D };
-}
-
-export interface Object3DEventMap {
-    /**
-     * Fires when the object has been added to its parent object.
-     */
-    added: {};
-
-    /**
-     * Fires when the object has been removed from its parent object.
-     */
-    removed: {};
-
-    /**
-     * Fires when a new child object has been added.
-     */
-    childadded: { child: Object3D };
-
-    /**
-     * Fires when a new child object has been removed.
-     */
-    childremoved: { child: Object3D };
-}
-
 /**
  * This is the base class for most objects in three.js and provides a set of properties and methods for manipulating objects in 3D space.
  * @remarks Note that this can be used for grouping objects via the {@link THREE.Object3D.add | .add()} method which adds the object as a child,
@@ -113,7 +69,7 @@ export interface Object3DEventMap {
  * @see {@link https://threejs.org/docs/index.html#api/en/core/Object3D | Official Documentation}
  * @see {@link https://github.com/mrdoob/three.js/blob/master/src/core/Object3D.js | Source}
  */
-export class Object3D<TEventMap extends Object3DEventMap = Object3DEventMap> extends EventDispatcher<TEventMap> {
+export class Object3D extends EventDispatcher {
     /**
      * This creates a new {@link Object3D} object.
      */

@@ -4,7 +4,7 @@ import { Object3D } from "../core/Object3D.js";
 /**
  * Abstract base class for controls.
  */
-declare abstract class Controls<TEventMap extends {}> extends EventDispatcher<TEventMap> {
+declare abstract class Controls extends EventDispatcher {
     /**
      * The 3D object that is managed by the controls.
      */

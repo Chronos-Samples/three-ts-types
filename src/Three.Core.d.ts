@@ -143,7 +143,6 @@ export * from "./renderers/WebGLArrayRenderTarget.js";
 export * from "./renderers/WebGLRenderTarget.js";
 export {
     WebXRController,
-    type WebXRSpaceEventMap,
     type XRControllerEventType,
     type XRGripSpace,
     type XRHandInputState,

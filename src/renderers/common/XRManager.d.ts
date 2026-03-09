@@ -13,14 +13,6 @@ import QuadMesh from "./QuadMesh.js";
 import Renderer from "./Renderer.js";
 import { XRRenderTarget } from "./XRRenderTarget.js";
 
-export interface XRManagerEventMap {
-    sessionstart: {};
-    sessionend: {};
-    planesdetected: {
-        data: XRFrame;
-    };
-}
-
 export interface LayerAttributes {
     stencil?: boolean | undefined;
 }
@@ -33,7 +25,7 @@ export interface LayerAttributes {
  *
  * @augments EventDispatcher
  */
-declare class XRManager extends EventDispatcher<XRManagerEventMap> {
+declare class XRManager extends EventDispatcher {
     /**
      * Constructs a new XR manager.
      *

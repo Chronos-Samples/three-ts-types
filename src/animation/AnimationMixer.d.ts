@@ -7,11 +7,6 @@ import { AnimationClip } from "./AnimationClip.js";
 import { AnimationObjectGroup } from "./AnimationObjectGroup.js";
 import { PropertyMixer } from "./PropertyMixer.js";
 
-export interface AnimationMixerEventMap {
-    loop: { action: AnimationAction; loopDelta: number };
-    finished: { action: AnimationAction; direction: number };
-}
-
 export interface MixerControlInterpolant extends LinearInterpolant {
     __cacheIndex: number;
 }
@@ -36,7 +31,7 @@ export interface AnimationMixerStats {
  * the scene. When multiple objects in the scene are animated independently,
  * one `AnimationMixer` may be used for each object.
  */
-export class AnimationMixer extends EventDispatcher<AnimationMixerEventMap> {
+export class AnimationMixer extends EventDispatcher {
     /**
      * Constructs a new animation mixer.
      *

@@ -1,33 +1,6 @@
 import { Camera, Controls, MOUSE, Object3D, Raycaster, TOUCH } from "three";
 
-export interface DragControlsEventMap {
-    /**
-     * Fires when the pointer is moved onto a 3D object, or onto one of its children.
-     */
-    hoveron: { object: Object3D };
-
-    /**
-     * Fires when the pointer is moved out of a 3D object.
-     */
-    hoveroff: { object: Object3D };
-
-    /**
-     * Fires when the user starts to drag a 3D object.
-     */
-    dragstart: { object: Object3D };
-
-    /**
-     * Fires when the user drags a 3D object.
-     */
-    drag: { object: Object3D };
-
-    /**
-     * Fires when the user has finished dragging a 3D object.
-     */
-    dragend: { object: Object3D };
-}
-
-declare class DragControls extends Controls<DragControlsEventMap> {
+declare class DragControls extends Controls {
     /**
      * An array of draggable 3D objects.
      */

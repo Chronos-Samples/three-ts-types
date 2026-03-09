@@ -1,26 +1,9 @@
 import { Camera, Controls, MOUSE, TOUCH, Vector3 } from "three";
 
-export interface OrbitControlsEventMap {
-    /**
-     * Fires when the camera has been transformed by the controls.
-     */
-    change: {};
-
-    /**
-     * Fires when an interaction was initiated.
-     */
-    start: {};
-
-    /**
-     * Fires when an interaction has finished.
-     */
-    end: {};
-}
-
 /**
  * Orbit controls allow the camera to orbit around a target.
  */
-declare class OrbitControls extends Controls<OrbitControlsEventMap> {
+declare class OrbitControls extends Controls {
     /**
      * The focus point of the controls, the {@link .object} orbits around this. It can be updated manually at any point
      * to change the focus of the controls.
