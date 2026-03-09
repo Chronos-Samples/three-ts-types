@@ -51,25 +51,25 @@ export class EventDispatcher {
      * @param listener The function that gets called when the event is fired.
      * @param options Additional settings for event listener.
      */
-    addEventListener(type: string, listener: EventListener<string, this>, options?: EventListenerOptions): void;
+    addEventListener(type: string, listener: EventListener<string, unknown>, options?: EventListenerOptions): void;
 
     /**
      * Checks if listener is added to an event type.
      * @param type The type of event to listen to.
      * @param listener The function that gets called when the event is fired.
      */
-    hasEventListener(type: string, listener: EventListener<string, this>): boolean;
+    hasEventListener(type: string, listener: EventListener<string, unknown>): boolean;
 
     /**
      * Removes a listener from an event type.
      * @param type The type of the listener that gets removed.
      * @param listener The listener function that gets removed.
      */
-    removeEventListener(type: string, listener: EventListener<string, this>): void;
+    removeEventListener(type: string, listener: EventListener<string, unknown>): void;
 
     /**
      * Fire an event type.
      * @param event The event object that gets fired.
      */
-    dispatchEvent(event: Event<string, this>): void;
+    dispatchEvent(event: Event<string, unknown>): void;
 }
